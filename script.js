@@ -16,7 +16,7 @@ function readWav() {
     xhr.open('POST', 'process_wav.php'); // Replace with your server-side script
     xhr.setRequestHeader('Content-Type', 'application/octet-stream');
     xhr.responseType = 'blob';
-    xhr.send(left);
+    xhr.send(new Blob([left.buffer]));
   };
   reader.readAsArrayBuffer(file);
 }
